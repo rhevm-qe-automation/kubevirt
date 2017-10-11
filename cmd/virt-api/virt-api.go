@@ -124,7 +124,7 @@ func (app *virtAPIApp) Run() {
 	restful.Filter(restful.OPTIONSFilter())
 
 	config := swagger.Config{
-		WebServices:     restful.RegisteredWebServices(), // you control what services are visible
+		WebServices:     []*restful.WebService{ws},
 		WebServicesUrl:  "http://localhost:8183",
 		ApiPath:         "/swaggerapi",
 		SwaggerPath:     "/swagger-ui/",
